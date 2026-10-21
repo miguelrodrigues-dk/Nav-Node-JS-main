@@ -1,0 +1,96 @@
+<%- include("../partials/header") %>
+ <%- include("../partials/nav") %>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow-sm">
+        <div class="card-header bg-success text-white">
+          <h4 class="mb-0">Editar Fornecedores</h4>
+        </div>
+
+       <div class="card-body">
+          <form action=" " method="POST">
+            <div class="mb-3">
+              <label for="razao_social" class="form-label"> Razão Social </label>
+
+              <input
+                type="text"
+                class="form-control"
+                id="razao_social"
+                name="razao_social"
+                placeholder="Digite a sua Razão Social"
+                required value="<%= fornecedor.rasaoSocial%>"
+              />
+            </div>
+
+             <div class="mb-3">
+              <label for="cnpj" class="form-label"> CNPJ </label>
+
+              <input
+                type="text"
+                class="form-control"
+                id="cnpj"
+                name="cnpj"
+                placeholder="Digite o seu CNPJ"
+                required value="<%= fornecedor.cnpj%>"
+              />
+            </div>
+
+
+            <div class="mb-3">
+              <label for="email" class="form-label"> Email </label>
+
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Digite o email"
+                required value="<%= fornecedor.email%>"
+              />
+            </div>
+
+              <div class="mb-3">
+              <label for="telephone" class="form-label"> Telephone </label>
+
+              <input
+                type="text"
+                class="form-control"
+                id="telephone"
+                name="telephone"
+                placeholder="Digite o telefone"
+               required value="<%= fornecedor.telephone%>"
+              />
+            </div>
+
+             <div class="mb-3">
+              <label for="cidade" class="form-label"> Cidade </label>
+
+              <input
+                type="text"
+                class="form-control"
+                id="cidade"
+                name="cidade"
+                placeholder="Digite a sua cidade"
+               required value="<%= fornecedor.cidade%>"
+              />
+            </div>
+
+           
+
+            <div class="d-flex gap-2">
+              <button type="submit" class="btn btn-success">Editar</button>
+
+              <a href="/fornecedores" class="btn btn-secondary"> Cancelar </a>
+
+            </div>
+             </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include("../partials/footer") %>

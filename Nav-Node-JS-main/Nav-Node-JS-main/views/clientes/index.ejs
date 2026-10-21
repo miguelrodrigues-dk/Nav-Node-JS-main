@@ -1,0 +1,62 @@
+<%- include('../partials/header') %>
+    <%- include('../partials/nav') %>
+        <div class="container mt-5">
+            <div class="d-flex justify-content-between
+                align-items-center mb-4">
+                <div>
+                    <h1>Clientes</h1>
+                    <p class="text-muted">
+                        Lista de clientes cadastrados
+                    </p>
+                </div>
+                <a href="/clientes/cadastro" class="btn btn-dark">
+                    + Novo Cliente
+                </a>
+            </div>
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover
+                              align-middle">
+                            <thead class="table-dark">
+                                <tr>
+                                     <th>ID</th>
+                                    <th>Nome</th>
+                                    <th>Email</th>
+                                    <th>Cidade</th>
+                                    <th>Telefone</th>
+                                    <th>Opções</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    <% clientes.forEach(mostrar =>  { %>
+                                <tr>
+                                    <td><%= mostrar.id %></td>
+
+                                    <td><%= mostrar.nome %></td>
+
+                                    <td><%= mostrar.email %></td>
+
+                                    <td><%= mostrar.cidade %></td>
+                                    
+                                    <td><%= mostrar.telefone %></td>
+
+                                     <td>
+                                            <a class="btn btn-warning btn-sm"
+                                                href="/clientes/editar/<%= mostrar.id %>">Editar</a>
+
+                                            <a class="btn btn-danger btn-sm"
+                                                href="/clientes/excluir/<%= mostrar.id %>"
+                                                onclick="return confirm('Deseja excluir este Cliente?')">Excluir</a>
+
+                                        </td>
+
+                                </tr>
+                            <% })%>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%- include('../partials/footer') %>
